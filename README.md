@@ -1,3 +1,16 @@
 # PortfolioOptimisation
-Portfolio Optimization EngineThis repository contains a Modern Portfolio Theory (MPT) optimization engine designed to construct risk-efficient investment portfolios. The engine focuses on the NIFTY 50 market, utilizing advanced statistical techniques to overcome the limitations of traditional sample covariance estimation.Key Features
-Mean-Variance Optimization (MVO): Determines the Efficient Frontier by balancing annualized returns against portfolio volatility.Ledoit-Wolf Shrinkage: Implements a shrinkage estimator to regularize the covariance matrix. This addresses the "curse of dimensionality" and provides more stable out-of-sample results than standard historical covariance.Mathematical Solvers: Utilizes the SLSQP (Sequential Least Squares Programming) algorithm to find the Maximum Sharpe Ratio and Minimum Volatility portfolios.Constraint Management: Supports real-world investment constraints, including a no-short-selling rule (weights between 0 and 1) and full capital allocation (sum of weights equals 1).Market Simulation: Includes a high-fidelity fallback simulator based on Geometric Brownian Motion (GBM) to stress-test the engine during periods of market data unavailability.Technical StackLanguage: Python Optimization: SciPy (scipy.optimize) Statistics/ML: Scikit-Learn (Ledoit-Wolf) Data Handling: Pandas, NumPy Visualization: Matplotlib UsageThe engine fetches historical adjusted closing prices for NIFTY blue-chip stocks (e.g., RELIANCE, TCS, HDFCBANK). It calculates logarithmic returns and uses the shrinkage-adjusted covariance matrix to output optimal asset weightings.Note: The current implementation uses a risk-free rate benchmark of 6.5% for Sharpe Ratio calculations.
+Portfolio Optimization EngineThis repository contains a Modern Portfolio Theory (MPT) optimization engine designed to construct risk-efficient investment portfolios. The engine focuses on the NIFTY 50 market, utilizing advanced statistical techniques to overcome the limitations of traditional sample covariance estimation.
+Key Features
+Mean-Variance Optimization (MVO): Determines the Efficient Frontier by balancing annualized returns against portfolio volatility.
+Ledoit-Wolf Shrinkage: Implements a shrinkage estimator to regularize the covariance matrix. This addresses the "curse of dimensionality" and provides more stable out-of-sample results than standard historical covariance.
+Mathematical Solvers: Utilizes the SLSQP (Sequential Least Squares Programming) algorithm to find the Maximum Sharpe Ratio and Minimum Volatility portfolios.
+Constraint Management: Supports real-world investment constraints, including a no-short-selling rule (weights between 0 and 1) and full capital allocation (sum of weights equals 1).
+Market Simulation: Includes a high-fidelity fallback simulator based on Geometric Brownian Motion (GBM) to stress-test the engine during periods of market data unavailability.
+
+Technical Stack
+Language: Python Optimization: SciPy (scipy.optimize)
+Statistics/ML: Scikit-Learn (Ledoit-Wolf) 
+Data Handling: Pandas, NumPy 
+Visualization: Matplotlib Usage
+
+The engine fetches historical adjusted closing prices for NIFTY blue-chip stocks (e.g., RELIANCE, TCS, HDFCBANK). It calculates logarithmic returns and uses the shrinkage-adjusted covariance matrix to output optimal asset weightings.Note: The current implementation uses a risk-free rate benchmark of 6.5% for Sharpe Ratio calculations.
